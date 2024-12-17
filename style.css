@@ -1,0 +1,623 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    padding: 10px 10%;
+}
+
+/* Header Section */
+#header {
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/back.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.header-text {
+    margin-top: 10%;
+    color: #ffffff;
+}
+
+.header-text h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.header-text span {
+    color: #ff5f1f;
+}
+
+.header-text p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10%; /* Adjusted padding for balanced spacing */
+    background: rgba(18, 18, 18, 0.95); /* Slight transparency */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+nav .h1n{
+    color: #ff5f1f;
+    margin-right: 0px;
+}
+
+nav:hover {
+    background: #1c1c1c; /* Full opacity on hover */
+}
+
+nav ul {
+    display: flex;
+    gap: 25px; /* Equal spacing between menu items */
+    list-style: none;;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    list-style: none;
+    padding-inline: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px; /* Standardized font size */
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    background: #ff5f1f; /* Highlight with theme color */
+    color: #000;
+    font-weight: bold;
+}
+
+nav ul li a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #ff5f1f; /* Underline effect */
+    transition: width 0.3s;
+    margin: auto;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav .fas {
+    display: none;
+    font-size: 26px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* Side Menu for Mobile */
+#sidemenu {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Fully hidden by default */
+    width: 250px;
+    height: 100vh;
+    background: #121212;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease;
+    padding: 30px 20px;
+    z-index: 1001;
+    text-align: left;
+}
+
+#sidemenu li {
+    margin: 20px 0;
+}
+
+#sidemenu li a {
+    display: block;
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#sidemenu li a:hover {
+    color: #ff5f1f;
+}
+
+#sidemenu .fas {
+    font-size: 28px;
+    color: #ff5f1f;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    nav .fas {
+        display: block;
+    }
+}
+
+/* Section Titles */
+h1.sub-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* About Section */
+#about {
+    padding: 60px 0;
+    background: #1c1c1c;
+    color: #ffffff;
+    text-align: center;
+}
+
+.about-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.about-img {
+    flex: 1;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px; /* Rounded rectangle edges */
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    margin: 0 auto;
+}
+
+.about-img img {
+    width: 100%;
+    height: auto;
+}
+
+.about-text {
+    flex: 2;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.about-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ff5f1f;
+}
+
+.about-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #cccccc;
+    text-align: justify;
+    margin-top: 10px;
+}
+
+.about-text button {
+    background: #ff5f1f;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+
+.about-text button:hover {
+    background: #e04e1a;
+}
+
+/* Skills Section */
+#skills {
+    padding: 50px 0;
+    background: #121212;
+    text-align: center;
+}
+
+#skills h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#skills ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+#skills ul li {
+    background: #1c1c1c;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 10px;
+    color: #ffffff;
+    text-align: left;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+#skills ul li:hover {
+    background: #262626;
+    transform: translateY(-5px);
+}
+
+#skills ul li strong {
+    color: #ff5f1f;
+}
+
+/* Projects Section */
+#projects {
+    padding: 50px 0;
+    background: #121212;
+    text-align: center;
+}
+
+#projects h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#projects ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+#projects ul li {
+    background: #1c1c1c;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 10px;
+    color: #ffffff;
+    text-align: left;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+#projects ul li:hover {
+    background: #262626;
+    transform: translateY(-5px);
+}
+
+#projects ul li strong {
+    color: #ff5f1f;
+}
+
+/* Contact Section */
+#contact {
+    padding: 50px 0;
+    text-align: center;
+}
+
+#contact p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+#contact p i {
+    margin-right: 10px;
+    color: #ff5f1f;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ff5f1f;
+}
+
+/* Buttons and Interactions */
+button, .fas.fa-bars, .fas.fa-times {
+    background: none;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .about-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-img {
+        margin-bottom: 20px;
+    }
+
+    h1.sub-title {
+        font-size: 2rem;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+}
+
+/* Experience Tab */
+#experience {
+    padding: 50px 0;
+    background: #121212;
+    color: #ffffff;
+    text-align: center;
+}
+
+#experience h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+#experience ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+#experience ul li {
+    background: #1c1c1c;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 10px;
+    color: #ffffff;
+    text-align: left;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+#experience ul li:hover {
+    background: #262626;
+    transform: translateY(-5px);
+}
+
+#experience ul li span {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ff5f1f;
+    margin-bottom: 10px;
+}
+
+#experience ul li p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+/* Certifications Section */
+#certifications {
+    padding: 50px 0;
+    background: #121212;
+    color: #ffffff;
+    text-align: center;
+}
+
+#certifications h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #ff5f1f;
+}
+
+#certifications ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+#certifications ul li {
+    background: #1c1c1c;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    color: #ffffff;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#certifications ul li:hover {
+    background: #262626;
+    transform: translateY(-5px);
+}
+
+#certifications ul li strong {
+    color: #ff5f1f;
+}
+
+/* Positions of Responsibility Section */
+#positions {
+    padding: 50px 0;
+    background: #1c1c1c;
+    color: #ffffff;
+    text-align: center;
+}
+
+#positions h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #ff5f1f;
+}
+
+#positions ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+#positions ul li {
+    background: #1c1c1c;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 10px;
+    color: #ffffff;
+    text-align: left;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+#positions ul li:hover {
+    background: #262626;
+    transform: translateY(-5px);
+}
+
+#positions ul li strong {
+    color: #ff5f1f;
+}
+
+/* Contact Me Section */
+#contact {
+    padding: 50px 0;
+    background: #121212;
+    color: #ffffff;
+    text-align: center;
+}
+
+#contact h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #ff5f1f;
+}
+
+#contact p {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #cccccc;
+}
+
+#contact p i {
+    color: #ff5f1f;
+    margin-right: 10px;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: #ffffff;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ff5f1f;
+}
+
+/* Education Section */
+#education {
+    padding: 50px 0;
+    background: #1c1c1c;
+    color: #ffffff;
+    text-align: center;
+}
+
+#education h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #ff5f1f;
+}
+
+#education ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+#education ul li {
+    background: #121212;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 10px;
+    color: #ffffff;
+    text-align: left;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+#education ul li:hover {
+    background: #262626;
+    transform: translateY(-5px);
+}
+
+#education ul li span {
+    display: block;
+    font-size: 1.2rem;
+    color: #ff5f1f;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#education ul li p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #cccccc;
+}
